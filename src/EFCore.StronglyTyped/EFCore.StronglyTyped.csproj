@@ -1,0 +1,54 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <IsRoslynComponent>true</IsRoslynComponent>
+    <EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
+
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <!-- NU5017: symbols package empty (no PDB — expected for source generators)  -->
+    <!-- NU5128: no lib/netstandard2.0/ assembly — expected since DLL is in analyzers/ -->
+    <NoWarn>$(NoWarn);NU5017;NU5128</NoWarn>
+
+    <PackageId>EFCore.StronglyTyped</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Justin Bannister</Authors>
+    <Copyright>Copyright (c) 2025 Justin Bannister</Copyright>
+    <Description>Compile-time strongly-typed ID generation for .NET using Roslyn source generators. Add [StronglyTypedId] to any readonly partial struct and get a fully-featured value type with EF Core ValueConverter and System.Text.Json converter — all generated at build time. Zero reflection, AOT-safe, no runtime overhead. Supports Guid, int, long, and string backing types.</Description>
+    <PackageTags>efcore;entity-framework;strongly-typed-id;source-generator;roslyn;dotnet;csharp;value-object;ddd;domain-driven-design;compile-time;zero-reflection;json;system-text-json;value-converter;guid;aot</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/Swevo/EFCore.StronglyTyped</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/Swevo/EFCore.StronglyTyped</PackageProjectUrl>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageIcon>icon.png</PackageIcon>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>false</IncludeSymbols>
+    <Deterministic>true</Deterministic>
+    <ContinuousIntegrationBuild Condition="'$(CI)' == 'true'">true</ContinuousIntegrationBuild>
+    <PackageReleaseNotes>1.0.0: Initial release. Guid, int, long, and string backing types. EF Core ValueConverter and System.Text.Json converter generated automatically.</PackageReleaseNotes>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.*" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.*" PrivateAssets="all">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.*" PrivateAssets="all">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\icon.png" Pack="true" PackagePath="\" />
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+    <!-- Place the generator DLL in analyzers/dotnet/cs/ so NuGet loads it as a source generator -->
+    <None Include="$(OutputPath)$(AssemblyName).dll"
+          Pack="true"
+          PackagePath="analyzers/dotnet/cs"
+          Visible="false" />
+    <!-- MSBuild props file that adds the analyzer reference — required for NuGet to wire it up -->
+    <None Include="build\EFCore.StronglyTyped.props" Pack="true" PackagePath="build\" />
+  </ItemGroup>
+</Project>

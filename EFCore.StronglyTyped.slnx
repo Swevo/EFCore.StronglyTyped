@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/EFCore.StronglyTyped/EFCore.StronglyTyped.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/EFCore.StronglyTyped.Tests/EFCore.StronglyTyped.Tests.csproj" />
+  </Folder>
+</Solution>
