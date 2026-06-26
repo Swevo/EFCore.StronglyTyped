@@ -13,7 +13,7 @@
     <NoWarn>$(NoWarn);NU5017;NU5128</NoWarn>
 
     <PackageId>Swevo.EFCore.StronglyTyped</PackageId>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <Authors>Justin Bannister</Authors>
     <Copyright>Copyright (c) 2025 Justin Bannister</Copyright>
     <Description>Compile-time strongly-typed ID generation for .NET using Roslyn source generators. Add [StronglyTypedId] to any readonly partial struct and get a fully-featured value type with EF Core ValueConverter and System.Text.Json converter — all generated at build time. Zero reflection, AOT-safe, no runtime overhead. Supports Guid, int, long, and string backing types.</Description>
