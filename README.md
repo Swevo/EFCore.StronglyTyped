@@ -1,7 +1,7 @@
-# EFCore.StronglyTyped
+# Swevo.EFCore.StronglyTyped
 
-[![NuGet](https://img.shields.io/nuget/v/EFCore.StronglyTyped.svg)](https://www.nuget.org/packages/EFCore.StronglyTyped)
-[![CI](https://github.com/Swevo/EFCore.StronglyTyped/actions/workflows/build.yml/badge.svg)](https://github.com/Swevo/EFCore.StronglyTyped/actions/workflows/build.yml)
+[![NuGet](https://img.shields.io/nuget/v/Swevo.EFCore.StronglyTyped.svg)](https://www.nuget.org/packages/Swevo.EFCore.StronglyTyped)
+[![CI](https://github.com/Swevo/Swevo.EFCore.StronglyTyped/actions/workflows/build.yml/badge.svg)](https://github.com/Swevo/Swevo.EFCore.StronglyTyped/actions/workflows/build.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Compile-time strongly-typed ID generation for .NET using Roslyn source generators.
@@ -41,14 +41,14 @@ void AssignDevice(CustomerId customerId, DeviceId deviceId) { ... }
 AssignDevice(device.Id, customer.Id); // ← CS1503: cannot convert DeviceId to CustomerId
 ```
 
-`EFCore.StronglyTyped` makes the pattern zero-friction — one attribute, everything else generated.
+`Swevo.EFCore.StronglyTyped` makes the pattern zero-friction — one attribute, everything else generated.
 
 ---
 
 ## Installation
 
 ```
-dotnet add package EFCore.StronglyTyped
+dotnet add package Swevo.EFCore.StronglyTyped
 ```
 
 Requires .NET 6+ (or any target that supports `netstandard2.0` packages).  
@@ -61,7 +61,7 @@ EF Core is **not** a required dependency of the generator — the `EfCoreValueCo
 ### 1. Declare your ID types
 
 ```csharp
-using EFCore.StronglyTyped;
+using Swevo.EFCore.StronglyTyped;
 
 [StronglyTypedId]                       // default: Guid backing
 public readonly partial struct DeviceId;
@@ -193,13 +193,13 @@ public readonly partial struct DeviceId : IEquatable<DeviceId>, IComparable<Devi
 
 ## AOT / NativeAOT
 
-Because all code is generated at build time and the `EfCoreValueConverter` uses compile-time lambda expressions, `EFCore.StronglyTyped` is fully compatible with NativeAOT and Blazor WASM trimming.
+Because all code is generated at build time and the `EfCoreValueConverter` uses compile-time lambda expressions, `Swevo.EFCore.StronglyTyped` is fully compatible with NativeAOT and Blazor WASM trimming.
 
 ---
 
 ## Related packages
 
-The `EFCore.StronglyTyped` package sits alongside the other compile-time generators in the Swevo suite:
+The `Swevo.EFCore.StronglyTyped` package sits alongside the other compile-time generators in the Swevo suite:
 
 | Package | Purpose |
 |---------|---------|

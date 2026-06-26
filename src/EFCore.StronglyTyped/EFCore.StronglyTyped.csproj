@@ -12,7 +12,7 @@
     <!-- NU5128: no lib/netstandard2.0/ assembly — expected since DLL is in analyzers/ -->
     <NoWarn>$(NoWarn);NU5017;NU5128</NoWarn>
 
-    <PackageId>EFCore.StronglyTyped</PackageId>
+    <PackageId>Swevo.EFCore.StronglyTyped</PackageId>
     <Version>1.0.0</Version>
     <Authors>Justin Bannister</Authors>
     <Copyright>Copyright (c) 2025 Justin Bannister</Copyright>
