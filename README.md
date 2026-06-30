@@ -1,6 +1,7 @@
 # Swevo.EFCore.StronglyTyped
 
-[![NuGet](https://img.shields.io/nuget/v/Swevo.EFCore.StronglyTyped.svg)](https://www.nuget.org/packages/Swevo.EFCore.StronglyTyped)
+[![NuGet](https://img.shields.io/nuget/v/Swevo.EFCore.StronglyTyped
+[![NuGet Downloads](https://img.shields.io/nuget/dt/Swevo.EFCore.StronglyTyped.svg)](https://www.nuget.org/packages/Swevo.EFCore.StronglyTyped).svg)](https://www.nuget.org/packages/Swevo.EFCore.StronglyTyped)
 [![CI](https://github.com/Swevo/Swevo.EFCore.StronglyTyped/actions/workflows/build.yml/badge.svg)](https://github.com/Swevo/Swevo.EFCore.StronglyTyped/actions/workflows/build.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
