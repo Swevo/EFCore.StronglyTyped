@@ -207,6 +207,8 @@ The `Swevo.EFCore.StronglyTyped` package sits alongside the other compile-time g
 | [AutoWire](https://github.com/Swevo/AutoWire) | Compile-time DI registration |
 | [AutoMap.Generator](https://github.com/Swevo/AutoMap.Generator) | Compile-time object mapping |
 | [AutoValidate.Generator](https://github.com/Swevo/AutoValidate.Generator) | Compile-time FluentValidation wiring |
+| [**AutoLog.Generator**](https://github.com/Swevo/AutoLog.Generator) | Compile-time high-performance logging — `[Log(Level, Message)]` on a partial method generates `LoggerMessage.Define`. AOT-safe. |
+| [**AutoHttpClient.Generator**](https://github.com/Swevo/AutoHttpClient.Generator) | Compile-time typed HTTP client — `[HttpClient]` on an interface generates a strongly-typed client. AOT-safe Refit alternative. |
 
 ---
 
